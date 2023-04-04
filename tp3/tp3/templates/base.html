@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppCoder/css/styles.css' %}" />
+    <title>TP 3</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'usuarios' %}">Usuarios</a></li>
+            <li><a href="{% url 'productos' %}">Productos</a></li>
+            <li><a href="{% url 'tiendas' %}">Tiendas</a></li>
+            <li><a href="{% url 'crear_usuario' %}">Crear usuario</a></li>
+            <li><a href="{% url 'crear_producto' %}">Crear producto</a></li>
+            <li><a href="{% url 'crear_tienda' %}">Crear tienda</a></li>
+            <li>
+                <form action="{% url 'buscar' %}" method="GET">
+                    <input type="text" name="q" placeholder="Buscar">
+                    <button type="submit">Buscar</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Lista de tiendas</h1>
+  <ul>
+    {% for tienda in tiendas %}
+      <li>Nombre: {{ tienda.nombre }}<br />Dirección: {{ tienda.direccion }} ({{ tienda.barrio }})</li>
+    {% empty %}
+      <li>No hay tiendas registradas</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
